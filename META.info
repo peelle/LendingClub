@@ -7,7 +7,7 @@
 	"provides" : {
 		"LendingClub" : "lib/LendingClub.pm"
 	},
-	"depends" : [ 'Net::HTTP', 'JSON::Tiny' ],
+	"depends" : [ "Net::HTTP", "JSON::Tiny" ],
 	"test-depends" : [ "Test" ],
 	"source-url" : "git://github.com/peelle/LendingClub.git"
 }
