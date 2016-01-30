@@ -2,6 +2,9 @@ sudo: false
 language: perl6 
 perl6: 
     - latest
+install:
+    - rakudobrew build-panda
+    - panda installdeps .
 notifications: 
     email: 
         - developer@peelle.org
