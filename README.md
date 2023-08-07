@@ -1,12 +1,12 @@
 ﻿LendingClub
 ==========
 
-[Lending Club API](https://www.lendingclub.com/developers/lc-api.action).  
+[Lending Club API](https://www.lendingclub.com/developers/lc-api.action).
 
 SYNOPSIS
 ===========
 
-A wrapper for the Lending Club API. It wraps all of the functions they currently provide. In the below examples, I modified the return #'s for my example query. 
+A wrapper for the Lending Club API. It wraps all of the functions they currently provide. In the below examples, I modified the return #'s for my example query.
 
 EXAMPLE
 =======
@@ -14,7 +14,7 @@ EXAMPLE
 use LendingClub;
 use Data::Dump;
 
-my $lc = LendingClub.new(token => 'somesecrettoken', accountId => 12345 ); 
+my $lc = LendingClub.new(token => 'somesecrettoken', accountId => 12345 );
 
 say Dump $lc.summary;'
 
@@ -34,7 +34,7 @@ say Dump $lc.summary;'
 }
 =end output
 
-my $dt = DateTime.new( year => 2016, month => 3, day => 3); 
+my $dt = DateTime.new( year => 2016, month => 3, day => 3);
 my $transfer = $lc.transferFunds( "LOAD_ONCE", 50.00, $dt.Str );
 
 $lc.cancelTransfers( [ $transfer<transfers>[0]<transferId> ] );
@@ -50,7 +50,7 @@ $lc.submitOrders( 12345, @some_notes_i_want );
 
 INSTALLATION
 ============
-     > panda install LendingClub
+     > zef install LendingClub
 
 DEPENDENCIES
 ============
@@ -75,7 +75,7 @@ METHODS
 * cancelTransfers( @transferIds )
 * createPortfolio( Int $aid, Str $portfolioName, Str $portfolioDescription? )
 * submitOrders( Int $aid, @orders )
-** aid is your account number. 
+** aid is your account number.
 
 BUGS
 ====
@@ -83,6 +83,10 @@ BUGS
 * I haven't tested it as thoroughly as I wanted. Specifically I don't have multiple account types(investing, and retirement) so  I don't know if it works right for people with both.
 * Setting listing to true attempts to get ALL notes on the Lending Club platform. Using a true value for the listing method crashes on my system. I haven't looked into why.
 
+NOTE ON FRESHNESS
+=================
+
+I no longer use Lending Club, but from time to time I will check if they've updated their API. If you notice an update, feel free to contact me via github or email.
 
 TODO/HELP PLEASE
 ====
